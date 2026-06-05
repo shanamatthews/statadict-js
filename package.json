@@ -1,0 +1,14 @@
+{
+  "name": "statadict-js",
+  "version": "0.1.0",
+  "description": "Parse Stata dictionary files into table header metadata",
+  "main": "statadict-js.js",
+  "type": "module",
+  "license": "MIT NON-AI License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanamatthews/statadict-js.git"
+  },
+  "keywords": ["stata", "dictionary", "parser", "arquero"],
+  "author": "Shana Matthews shana.l.matthews@gmail.com"
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>statadict-js Browser Test</title>
+</head>
+<body>
+  <h1>statadict-js Browser Test</h1>
+  <p>This page loads <code>statadict-js.js</code> as an ES module and prints a sample parse result.</p>
+  <div id="output"></div>
+
+  <script type="module">
+    import { dctToTableInput } from './statadict-js.js';
+
+    const exampleText = `infile dictionary {\r
+    _column(1)      str12                             id  %12s  "ID NUMBER (STRING)"\r
+   _column(13)       byte                           n   %2f  "N (NUMBER)"\r
+   _column(15)       byte                           m   %2f  "M (NUMBER)"\r
+}`;
+
+    const result = dctToTableInput(exampleText);
+    const output = document.getElementById('output');
+
+    output.innerHTML = `
+      <p><strong>Parsed ${result.names.length}</strong> columns.</p>
+      <pre>${JSON.stringify(result, null, 2)}</pre>
+    `;
+
+    console.log('statadict-js result:', result);
+  </script>
+</body>
+</html>
